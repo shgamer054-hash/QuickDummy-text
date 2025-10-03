@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickDummyText – Free International Lorem Ipsum Generator</title>
+  <meta name="description" content="QuickDummyText is an easy and fast international Lorem Ipsum generator. Generate dummy text, paragraphs, sentences, or words for web design, UI mockups, or content testing.">
+  <meta name="keywords" content="lorem ipsum generator, dummy text generator, filler text, placeholder text, free lorem ipsum, random text generator, quick dummy text">
+  <meta name="author" content="QuickDummyText">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+  <div class="bg-white shadow-xl rounded-2xl p-6 w-full max-w-3xl">
+    <h1 class="text-3xl font-bold text-gray-800 text-center mb-2">🌍 QuickDummyText</h1>
+    <p class="text-gray-500 text-center mb-6">Fast, Easy & International Lorem Ipsum Generator</p>
+
+    <!-- Selection Options -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4 text-center">
+      <div>
+        <label class="font-medium text-gray-700">Paragraphs</label>
+        <input type="number" id="paraCount" value="2" min="1" max="20" class="border rounded-lg p-2 w-24 text-center focus:ring-2 focus:ring-green-400">
+      </div>
+      <div>
+        <label class="font-medium text-gray-700">Sentences</label>
+        <input type="number" id="sentCount" value="0" min="0" max="50" class="border rounded-lg p-2 w-24 text-center focus:ring-2 focus:ring-green-400">
+      </div>
+      <div>
+        <label class="font-medium text-gray-700">Words</label>
+        <input type="number" id="wordCount" value="0" min="0" max="200" class="border rounded-lg p-2 w-24 text-center focus:ring-2 focus:ring-green-400">
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex justify-center gap-4 mb-4 flex-wrap">
+      <button onclick="generateText()" class="bg-green-500 text-white px-6 py-2 rounded-lg shadow hover:bg-green-600 transition">Generate</button>
+      <button onclick="copyText()" class="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition">Copy</button>
+    </div>
+
+    <!-- Output Area -->
+    <textarea id="output" class="w-full h-72 border rounded-lg p-4 text-gray-700 focus:ring-2 focus:ring-green-400 resize-none" placeholder="Generated text will appear here..."></textarea>
+  </div>
+
+  <script>
+    // Lorem Ipsum words array
+    const loremWords = "Lorem ipsum dolor sit amet consectetur adipiscing elit Curabitur euismod nunc id facilisis porttitor velit felis dapibus sapien vel lacinia eros ipsum nec quam".split(" ");
+
+    // Generate text based on user input
+    function generateText() {
+      let paras = parseInt(document.getElementById("paraCount").value);
+      let sentences = parseInt(document.getElementById("sentCount").value);
+      let words = parseInt(document.getElementById("wordCount").value);
+      let output = "";
+
+      if (words > 0) {
+        for (let i = 0; i < words; i++) {
+          output += loremWords[Math.floor(Math.random() * loremWords.length)] + " ";
+        }
+      } 
+      else if (sentences > 0) {
+        for (let i = 0; i < sentences; i++) {
+          output += makeSentence() + " ";
+        }
+      } 
+      else {
+        for (let i = 0; i < paras; i++) {
+          output += makeParagraph() + "\n\n";
+        }
+      }
+
+      document.getElementById("output").value = output.trim();
+    }
+
+    function makeSentence() {
+      let length = Math.floor(Math.random() * 10) + 8; // 8-18 words
+      let sentence = "";
+      for (let i = 0; i < length; i++) {
+        sentence += loremWords[Math.floor(Math.random() * loremWords.length)] + " ";
+      }
+      return sentence.charAt(0).toUpperCase() + sentence.trim() + ".";
+    }
+
+    function makeParagraph() {
+      let para = "";
+      let sentCount = Math.floor(Math.random() * 4) + 4; // 4-7 sentences per paragraph
+      for (let i = 0; i < sentCount; i++) {
+        para += makeSentence() + " ";
+      }
+      return para.trim();
+    }
+
+    function copyText() {
+      let text = document.getElementById("output");
+      text.select();
+      document.execCommand("copy");
+      alert("✅ Text copied to clipboard!");
+    }
+  </script>
+</body>
+</html>
