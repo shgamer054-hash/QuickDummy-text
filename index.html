@@ -1,99 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuickDummyText – Free International Lorem Ipsum Generator</title>
-  <meta name="description" content="QuickDummyText is an easy and fast international Lorem Ipsum generator. Generate dummy text, paragraphs, sentences, or words for web design, UI mockups, or content testing.">
-  <meta name="keywords" content="lorem ipsum generator, dummy text generator, filler text, placeholder text, free lorem ipsum, random text generator, quick dummy text">
-  <meta name="author" content="QuickDummyText">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickDummy Text – Free Dummy Text Generator Tool</title>
+  <meta name="description" content="QuickDummy Text is a free online dummy text generator. Instantly generate random Lorem Ipsum text for design, content preview, or development.">
+  <meta name="keywords" content="dummy text generator, lorem ipsum, text generator, online tools, quick dummy text, free text tool">
+  <meta name="author" content="QuickDummy Text Team">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #222;
+    }
+    header {
+      background: #0078ff;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h1, h2 {
+      color: #0078ff;
+    }
+    button {
+      background: #0078ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #005fcb;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      margin-top: 10px;
+      font-family: monospace;
+      padding: 10px;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+<body>
 
-  <div class="bg-white shadow-xl rounded-2xl p-6 w-full max-w-3xl">
-    <h1 class="text-3xl font-bold text-gray-800 text-center mb-2">🌍 QuickDummyText</h1>
-    <p class="text-gray-500 text-center mb-6">Fast, Easy & International Lorem Ipsum Generator</p>
+  <header>
+    <h1>QuickDummy Text</h1>
+    <p>Free Online Dummy Text Generator Tool</p>
+  </header>
 
-    <!-- Selection Options -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4 text-center">
-      <div>
-        <label class="font-medium text-gray-700">Paragraphs</label>
-        <input type="number" id="paraCount" value="2" min="1" max="20" class="border rounded-lg p-2 w-24 text-center focus:ring-2 focus:ring-green-400">
-      </div>
-      <div>
-        <label class="font-medium text-gray-700">Sentences</label>
-        <input type="number" id="sentCount" value="0" min="0" max="50" class="border rounded-lg p-2 w-24 text-center focus:ring-2 focus:ring-green-400">
-      </div>
-      <div>
-        <label class="font-medium text-gray-700">Words</label>
-        <input type="number" id="wordCount" value="0" min="0" max="200" class="border rounded-lg p-2 w-24 text-center focus:ring-2 focus:ring-green-400">
-      </div>
-    </div>
+  <main>
+    <section id="tool">
+      <h2>Generate Dummy Text Instantly</h2>
+      <p>Click the button below to generate random Lorem Ipsum text for your projects.</p>
+      <button onclick="generateText()">Generate Text</button>
+      <textarea id="output" readonly></textarea>
+    </section>
 
-    <!-- Buttons -->
-    <div class="flex justify-center gap-4 mb-4 flex-wrap">
-      <button onclick="generateText()" class="bg-green-500 text-white px-6 py-2 rounded-lg shadow hover:bg-green-600 transition">Generate</button>
-      <button onclick="copyText()" class="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition">Copy</button>
-    </div>
+    <hr>
 
-    <!-- Output Area -->
-    <textarea id="output" class="w-full h-72 border rounded-lg p-4 text-gray-700 focus:ring-2 focus:ring-green-400 resize-none" placeholder="Generated text will appear here..."></textarea>
-  </div>
+    <section id="article">
+      <h2>About QuickDummy Text</h2>
+      <p><strong>QuickDummy Text</strong> is a free online tool that allows you to generate dummy text (Lorem Ipsum) instantly. This tool is perfect for web designers, developers, and content creators who need placeholder text for web design, app prototypes, or content previews.</p>
+
+      <h2>Features</h2>
+      <ul>
+        <li>Generate dummy text instantly</li>
+        <li>Free and easy to use</li>
+        <li>No sign-up or login required</li>
+        <li>Responsive design – works on mobile and desktop</li>
+        <li>Copy and use generated text anywhere</li>
+      </ul>
+
+      <h2>Why Use Dummy Text?</h2>
+      <p>Dummy text (Lorem Ipsum) helps visualize how a design looks without real content. QuickDummy Text makes it easy to generate placeholder text quickly so you can focus on your design or layout testing.</p>
+
+      <h2>How to Use</h2>
+      <ol>
+        <li>Click on “Generate Text”</li>
+        <li>Copy the generated text</li>
+        <li>Use it in your design or document</li>
+      </ol>
+
+      <h2>Why Choose QuickDummy Text?</h2>
+      <p>QuickDummy Text is lightweight, fast, and fully free. It’s designed to help developers and designers save time and work more efficiently.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 QuickDummy Text | Built with ❤️ by SHGamer
+  </footer>
 
   <script>
-    // Lorem Ipsum words array
-    const loremWords = "Lorem ipsum dolor sit amet consectetur adipiscing elit Curabitur euismod nunc id facilisis porttitor velit felis dapibus sapien vel lacinia eros ipsum nec quam".split(" ");
-
-    // Generate text based on user input
     function generateText() {
-      let paras = parseInt(document.getElementById("paraCount").value);
-      let sentences = parseInt(document.getElementById("sentCount").value);
-      let words = parseInt(document.getElementById("wordCount").value);
-      let output = "";
-
-      if (words > 0) {
-        for (let i = 0; i < words; i++) {
-          output += loremWords[Math.floor(Math.random() * loremWords.length)] + " ";
-        }
-      } 
-      else if (sentences > 0) {
-        for (let i = 0; i < sentences; i++) {
-          output += makeSentence() + " ";
-        }
-      } 
-      else {
-        for (let i = 0; i < paras; i++) {
-          output += makeParagraph() + "\n\n";
-        }
-      }
-
-      document.getElementById("output").value = output.trim();
-    }
-
-    function makeSentence() {
-      let length = Math.floor(Math.random() * 10) + 8; // 8-18 words
-      let sentence = "";
-      for (let i = 0; i < length; i++) {
-        sentence += loremWords[Math.floor(Math.random() * loremWords.length)] + " ";
-      }
-      return sentence.charAt(0).toUpperCase() + sentence.trim() + ".";
-    }
-
-    function makeParagraph() {
-      let para = "";
-      let sentCount = Math.floor(Math.random() * 4) + 4; // 4-7 sentences per paragraph
-      for (let i = 0; i < sentCount; i++) {
-        para += makeSentence() + " ";
-      }
-      return para.trim();
-    }
-
-    function copyText() {
-      let text = document.getElementById("output");
-      text.select();
-      document.execCommand("copy");
-      alert("✅ Text copied to clipboard!");
+      const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
+      Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.`;
+      document.getElementById("output").value = lorem;
     }
   </script>
 </body>
