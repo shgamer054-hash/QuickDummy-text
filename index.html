@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuickDummyText – Free International Lorem Ipsum Generator</title>
-  <meta name="description" content="QuickDummyText is an easy and fast international Lorem Ipsum generator. Generate dummy text, paragraphs, sentences, or words for web design, UI mockups, or content testing.">
-  <meta name="keywords" content="lorem ipsum generator, dummy text generator, filler text, placeholder text, free lorem ipsum, random text generator, quick dummy text">
+  <title>QuickDummyText – Free Lorem Ipsum & Dummy Text Generator Online</title>
+  <meta name="description" content="QuickDummyText is a free and fast dummy text generator online. Instantly create Lorem Ipsum paragraphs, sentences, or words for web design, apps, and UI mockups.">
+  <meta name="keywords" content="free lorem ipsum generator, dummy text generator, lorem ipsum online, placeholder text, ai text generator, generate random text for website, quickdummytext tool, filler text generator, content generator online">
   <meta name="author" content="QuickDummyText">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
 
-  <div class="bg-white shadow-xl rounded-2xl p-6 w-full max-w-3xl">
+  <div class="bg-white shadow-xl rounded-2xl p-6 w-full max-w-3xl mb-10">
     <h1 class="text-3xl font-bold text-gray-800 text-center mb-2">🌍 QuickDummyText</h1>
-    <p class="text-gray-500 text-center mb-6">Fast, Easy & International Lorem Ipsum Generator</p>
+    <p class="text-gray-500 text-center mb-6">Fast, Easy & Free Dummy Text Generator Online</p>
 
     <!-- Selection Options -->
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4 text-center">
@@ -41,11 +41,37 @@
     <textarea id="output" class="w-full h-72 border rounded-lg p-4 text-gray-700 focus:ring-2 focus:ring-green-400 resize-none" placeholder="Generated text will appear here..."></textarea>
   </div>
 
+  <!-- ✅ SEO Optimized Article Section -->
+  <section class="bg-white shadow-lg rounded-2xl p-6 w-full max-w-3xl mb-10">
+    <h2 class="text-2xl font-bold text-gray-800 mb-3">About QuickDummyText – Free Lorem Ipsum Generator</h2>
+    <p class="text-gray-600 mb-3">
+      <strong>QuickDummyText</strong> is a powerful and free <strong>dummy text generator online</strong> that allows you to create <em>Lorem Ipsum</em> paragraphs, sentences, and words instantly. This tool is perfect for <strong>web designers</strong>, <strong>UI developers</strong>, and <strong>content creators</strong> who need quick filler or placeholder text for mockups and layouts.
+    </p>
+    <p class="text-gray-600 mb-3">
+      Whether you’re building a new website, testing a blog design, or previewing app content, our <strong>free lorem ipsum generator</strong> makes it super easy to fill your project with professional-looking text. No sign-up required — simply select what you want and click “Generate.”
+    </p>
+
+    <h3 class="text-xl font-semibold text-gray-800 mt-5 mb-2">✨ Key Features</h3>
+    <ul class="list-disc pl-6 text-gray-600 mb-3">
+      <li>Instantly generate paragraphs, sentences, or words.</li>
+      <li>100% free, fast, and mobile-friendly.</li>
+      <li>Built with Tailwind CSS for a clean modern look.</li>
+      <li>Perfect <strong>placeholder text generator</strong> for web design & mockups.</li>
+      <li>Copy your dummy text with one click!</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold text-gray-800 mt-5 mb-2">🚀 Why Choose QuickDummyText?</h3>
+    <p class="text-gray-600 mb-3">
+      Our <strong>AI-based dummy text generator</strong> ensures randomness and natural-looking results, ideal for developers testing dynamic layouts. It saves time and helps you visualize how your content will appear in a real project.
+    </p>
+    <p class="text-gray-600">
+      Start generating content today with QuickDummyText — your go-to <strong>free lorem ipsum generator online</strong> for fast, clean, and realistic filler text.
+    </p>
+  </section>
+
   <script>
-    // Lorem Ipsum words array
     const loremWords = "Lorem ipsum dolor sit amet consectetur adipiscing elit Curabitur euismod nunc id facilisis porttitor velit felis dapibus sapien vel lacinia eros ipsum nec quam".split(" ");
 
-    // Generate text based on user input
     function generateText() {
       let paras = parseInt(document.getElementById("paraCount").value);
       let sentences = parseInt(document.getElementById("sentCount").value);
@@ -56,23 +82,20 @@
         for (let i = 0; i < words; i++) {
           output += loremWords[Math.floor(Math.random() * loremWords.length)] + " ";
         }
-      } 
-      else if (sentences > 0) {
+      } else if (sentences > 0) {
         for (let i = 0; i < sentences; i++) {
           output += makeSentence() + " ";
         }
-      } 
-      else {
+      } else {
         for (let i = 0; i < paras; i++) {
           output += makeParagraph() + "\n\n";
         }
       }
-
       document.getElementById("output").value = output.trim();
     }
 
     function makeSentence() {
-      let length = Math.floor(Math.random() * 10) + 8; // 8-18 words
+      let length = Math.floor(Math.random() * 10) + 8;
       let sentence = "";
       for (let i = 0; i < length; i++) {
         sentence += loremWords[Math.floor(Math.random() * loremWords.length)] + " ";
@@ -82,7 +105,7 @@
 
     function makeParagraph() {
       let para = "";
-      let sentCount = Math.floor(Math.random() * 4) + 4; // 4-7 sentences per paragraph
+      let sentCount = Math.floor(Math.random() * 4) + 4;
       for (let i = 0; i < sentCount; i++) {
         para += makeSentence() + " ";
       }
